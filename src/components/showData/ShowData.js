@@ -6,16 +6,26 @@ import {UseShowDAta} from './useShowData';
 
 // create a component
 function ShowData({navigation}) {
-  const [store] = UseShowDAta();
-  console.log("STORE IN SHOW COMP..", store);
+
+  const [storeData] = UseShowDAta();
+  // const Arr=[]
+  console.log('STORE IN SHOW COMP..', storeData);
   return (
     <View style={styles.container}>
       <Text>Show Student Data</Text>
-     
-          
-            <Text>Name : {store.newStName}</Text>
-            <Text>Roll# : {store.newStRoll}</Text>
-      
+
+      {storeData.map(item => {
+        return (
+          <View>
+            <Text>Name : {item.newStName}</Text>
+            <Text>Roll# : {item.newStRoll}</Text>
+          </View>
+        );
+      })}
+      {/* <View>
+        <Text>Name : {storeData.newStName}</Text>
+        <Text>Roll# : {storeData.newStRoll}</Text>
+      </View> */}
 
       <Button
         title="Go to Add Data"

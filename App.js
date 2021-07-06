@@ -15,6 +15,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AddTasks from './src/components/addTasks/AddTasks';
 
 const Stack = createStackNavigator();
 
@@ -33,14 +34,15 @@ function App() {
             name="Add Data"
             component={AddData}
             options={{
-              title: 'Overview',
+              title: 'Tassker',
               headerStyle: {
-                backgroundColor: '#f4511e',
+                // backgroundColor: '#f4511e',
               },
             }}
           />
 
           <Stack.Screen name="Show Data" component={ShowData} />
+          <Stack.Screen name="Add Task" component={AddTasks} />
         </Stack.Navigator>
       </NavigationContainer>
      

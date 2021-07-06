@@ -9,14 +9,13 @@ import {AddData} from "../../store/Action"
 export function UseAddData(){
     const [stName, setStName] = useState("")
     const [stRoll, setStRoll] = useState("")
-
+    
     const dispatch = useDispatch();
-
-    const ctaEmptyHandler=()=>{
-        setStName('');
-        setStRoll('');
-    }
-
+  
+    
+    
+    
+ 
     const ctaHandler= ()=>{
        
        let newSt = {
@@ -24,12 +23,12 @@ export function UseAddData(){
            newStRoll: stRoll,
        }
        
-
+      
        dispatch(AddData(newSt));
        
-       console.log("New Obj in ctaHandler ", newSt)
+      
     }
 
 
-    return [setStName, setStRoll, ctaHandler, ctaEmptyHandler];
+    return [setStName, setStRoll, ctaHandler];
 }

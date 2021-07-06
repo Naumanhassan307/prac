@@ -3,10 +3,9 @@ import { useSelector } from "react-redux";
 
 
 export function UseShowDAta(){
-    const store = useSelector(store => store.state)
+    const storeData = useSelector(store => store.Reducer.newState)
+    console.log('Data comming from Store in UseShowDAta', storeData);
 
-    console.log("Data comming from Store in UseShowDAta", store)
-
-    return[store];
+    return [storeData];
 
 }

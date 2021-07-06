@@ -1,6 +1,7 @@
 //import liraries
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Button, TextInput} from 'react-native';
+import AddTasks from '../addTasks/AddTasks';
 
 
 import {UseAddData} from "./useAddData";
@@ -9,7 +10,7 @@ import {UseAddData} from "./useAddData";
 // create a component
 function AddData({navigation}) {
 
-  const [setStName, setStRoll, ctaHandler, ctaEmptyHandler] = UseAddData();
+  const [setStName, setStRoll, ctaHandler, ] = UseAddData();
 
 
   return (
@@ -25,13 +26,24 @@ function AddData({navigation}) {
         style={styles.myClass}
         onChangeText={(val) => setStRoll(val)}
       />
-      <TouchableOpacity style={styles.myClass} onPress={ctaHandler}  onPressOut={ctaEmptyHandler}>
+      <TouchableOpacity style={styles.myClass} onPress={ctaHandler}  >
         <Text> Submit</Text>
       </TouchableOpacity>
+     
       <Button
         title="Go to Show Data"
         onPress={() => navigation.navigate('Show Data')}
+
       />
+      <View><Text>------------------------------------</Text></View>
+      <Button
+          title="Go to Add Task"
+          onPress={() => navigation.navigate('Add Task')}
+          
+        />
+        
+        {/* <AddTasks /> */}
+      
     </View>
   );
 }
